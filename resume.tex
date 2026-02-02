@@ -1,86 +1,118 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
+
+% ---------- Font: Times (pdfLaTeX safe) ----------
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+
 \usepackage{url}
 \usepackage{parskip}
-\RequirePackage{color}
 \RequirePackage{graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{xcolor}
 \usepackage[scale=0.94]{geometry}
 \usepackage{tabularx}
-\usepackage{array} % for newcolumntype
+\usepackage{array}
 \usepackage{enumitem}
-\newcolumntype{C}{>{\centering\arraybackslash}X}
 \usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{6pt}{6pt}
-\usepackage[unicode,draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\usepackage[unicode]{hyperref}
 \usepackage{fontawesome5}
+
+% ---------- Formatting ----------
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{
+  colorlinks=true,
+  breaklinks=true,
+  urlcolor=linkcolour,
+  linkcolor=linkcolour
+}
+
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{6pt}
 
 \begin{document}
 \pagestyle{empty}
 
+% ---------- Header ----------
 \begin{tabularx}{\linewidth}{@{}C@{}}
-\Huge{\textbf{Anvi Wadhwa}} \\[5pt]
+{\Huge \textbf{Anvi Wadhwa}} \\[5pt]
 \href{https://github.com/anvisgit}{\raisebox{-0.05\height}\faGithub\ anvisgit} \ $|$ \
 \href{https://linkedin.com/in/anvi-wadhwa}{\raisebox{-0.05\height}\faLinkedin\ anvi-wadhwa} \ $|$ \
 \href{mailto:anvi.wadhwa2024@vitstudent.ac.in}{\raisebox{-0.05\height}\faEnvelope\ anvi.wadhwa2024@vitstudent.ac.in} \ $|$ \
-\raisebox{-0.05\height}\faMobile\ +91 9319086177 \\
+\raisebox{-0.05\height}\faMobile\ +91 9319086177
 \end{tabularx}
 
 \vspace{6pt}
 
+% ---------- Summary ----------
 \section{Summary}
-Computer Science student passionate about Artificial Intelligence, Machine Learning, and Quantitative Finance. Experienced in building AI-driven applications integrating NLP, deep learning, and financial modeling. Skilled in data pipelines, research-based automation, and visualization.
+Computer Science student passionate about Artificial Intelligence, Machine Learning, Space Tech and Quantitative Finance. Experience in building AI-driven applications that integrate NLP, deep learning, and financial modeling. Skilled in data pipelines, research-based automation, and visualization.
 
-\section{Projects}
-\begin{tabularx}{\linewidth}{@{}l r@{}}
+% ---------- Research Interests ----------
+\section{Research Interests}
+Machine learning applications in physical and space sciences, with a focus on characterizing interplanetary magnetic field fluctuations using cosmic ray secondaries (muons). Deep learning architectures including artificial neural networks (ANNs) and graph neural networks (GNNs) for modeling complex, high-dimensional physical systems. Bayesian inference for probabilistic modeling and uncertainty quantification. Reinforcement learning optimization algorithms such as Proximal Policy Optimization (PPO) and Group Relative Policy Optimization (GRPO), with interest in their mathematical foundations and large-scale training dynamics as explored in recent DeepSeek math and reasoning research.
 
-\textbf{Resume Insight Analyzer} & \hfill \href{https://github.com/anvisgit}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Built an AI-powered Streamlit app using Sentence Transformers and SpaCy to analyze resumes, identify skill gaps, and evaluate tone using semantic similarity and sentiment scoring.} \\[6pt]
-
-\textbf{Financial Analysis and Stock Prediction App} & \hfill \href{https://github.com/anvisgit}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Developed a predictive stock analytics system with Yahoo Finance, Finnhub API, Prophet, and XGBoost for real-time visualization and sentiment-based market insights.} \\[6pt]
-
-\textbf{Real-Time Emotion Detection} & \hfill \href{https://github.com/anvisgit}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Implemented a webcam-based facial emotion recognition system using OpenCV and FER for real-time classification of human emotions.} \\[6pt]
-
-\textbf{Monte Carlo Stock Price Simulation} & \hfill \href{https://github.com/anvisgit}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Simulated probabilistic stock price movements using Monte Carlo methods with Streamlit, NumPy, and yFinance for interactive financial forecasting.} \\[6pt]
-
-\textbf{Vision Transformer (ViT) from Scratch} & \hfill \href{https://github.com/anvisgit/vision-transformer}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Built a Vision Transformer (ViT) from scratch in PyTorch with custom patch embedding, multi-head self-attention, and MLP layers. Trained the model on the CIFAR-10 dataset, achieving strong image classification performance and analyzing attention maps for interpretability.} \\
-
-\end{tabularx}
-
+% ---------- Education ----------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-2024 -- 2028 & \textbf{Bachelor of Technology in Computer Science}, VIT Chennai \hfill (CGPA: 8.4) \\
- & Clubs: Business Innovation Community (R\&D Lead), Microsoft Innovation Community (AI/ML Member), HackClub (Blockchain Member), Robotics club(ML Member), Mathematics Club (Research Member) \\[6pt]
+2024 -- 2028 & \textbf{Bachelor of Technology in Computer Science}, VIT Chennai \hfill (CGPA: 8.1) \\
+ & Clubs: Business Innovation Community (R\&D Lead), Microsoft Innovation Community (AI/ML Member), HackClub (Blockchain Member), Robotics Club (ML Member), Mathematics Club (Research Member) \\[6pt]
 2024 & Class 12 -- St. Francis School \hfill (86\%) \\[3pt]
 2022 & Class 10 -- St. Francis School \hfill (93\%) \\
 \end{tabularx}
 
+% ---------- Projects ----------
+\section{Projects}
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{Fraud Click Detection System} & \href{https://github.com/anvisgit}{Link} \\[2pt]
+\multicolumn{2}{L}{
+Developed an end-to-end fraud click detection system using \textbf{Random Forest, XGBoost, and Multi-Layer Perceptron (MLP)}. Implemented ensemble learning with hard and soft voting to improve robustness on imbalanced clickstream data. Built an interactive \textbf{Streamlit} dashboard for real-time hyperparameter tuning and model evaluation using ROC-AUC, Precision-Recall curves, confusion matrices, and feature importance analysis.
+} \\[4pt]
+
+\textbf{Resume Insight Analyzer} & \href{https://github.com/anvisgit}{Link} \\[2pt]
+\multicolumn{2}{L}{
+Built an AI-powered Streamlit app using \textbf{Sentence Transformers} and \textbf{SpaCy} to analyze resumes, identify skill gaps, and evaluate tone using semantic similarity and sentiment scoring.
+} \\[4pt]
+
+\textbf{Financial Analysis and Stock Prediction App} & \href{https://github.com/anvisgit}{Link} \\[2pt]
+\multicolumn{2}{L}{
+Developed a predictive stock analytics system with \textbf{Yahoo Finance, Finnhub API, Prophet, and XGBoost} for real-time visualization and sentiment-based market insights.
+} \\[4pt]
+
+\textbf{Real-Time Emotion Detection} & \href{https://github.com/anvisgit}{Link} \\[2pt]
+\multicolumn{2}{L}{
+Implemented a webcam-based facial emotion recognition system using \textbf{OpenCV} and \textbf{FER} for real-time classification of human emotions.
+} \\[4pt]
+
+\textbf{Monte Carlo Stock Price Simulation} & \href{https://github.com/anvisgit}{Link} \\[2pt]
+\multicolumn{2}{L}{
+Simulated probabilistic stock price movements using \textbf{Monte Carlo methods} with \textbf{Streamlit, NumPy,} and \textbf{yFinance} for interactive financial forecasting.
+} \\
+\end{tabularx}
+
+% ---------- Certifications ----------
 \section{Certifications}
-\begin{itemize}[noitemsep, leftmargin=1em]
+\begin{itemize}[noitemsep,leftmargin=1em]
 \item Data Science with Python (Iamneo)
 \item Quantitative Finance (IIT Kharagpur)
 \item Python and Automation (IIT Bombay)
 \item Machine Learning Specialization (Coursera -- Andrew Ng)
-\item Scientific Computing
+\item Scientific Computing (FreeCodeCamp)
 \item Data Analysis with Python (FreeCodeCamp)
 \end{itemize}
 
+% ---------- Skills ----------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-\textbf{Programming Languages} & Python, C, Java \\
+\textbf{Programming Languages} & Python, Java \\
 \textbf{Machine Learning \& AI} & Deep Learning, NLP, Computer Vision, Generative AI, Time-Series Forecasting \\
 \textbf{Frameworks \& Libraries} & PyTorch, scikit-learn, LangChain, OpenCV, NumPy, Pandas, Matplotlib, Streamlit \\
 \textbf{Tools \& Platforms} & Git, VS Code, Jupyter Notebook, Google Colab, Finnhub API, Yahoo Finance \\
 \textbf{Core Competencies} & Model Training \& Optimization, Statistical Modeling, Feature Engineering, Sentiment Analysis, Data Visualization \\
-\textbf{Additional} & Research Writing, Technical Blogging (Medium), Data Analysis \\
+\textbf{Additional} & Research Writing, Technical Blogging (Medium), Blogs, Article Writing  \\
 \end{tabularx}
 
 \vspace{6pt}
