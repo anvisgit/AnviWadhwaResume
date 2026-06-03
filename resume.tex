@@ -1,121 +1,232 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[letterpaper,11pt]{article}
 
-% ---------- Font: Times (pdfLaTeX safe) ----------
-\usepackage{newtxtext}
-\usepackage{newtxmath}
+%------------------------------------------------
+% Packages
+%------------------------------------------------
 
-\usepackage{url}
-\usepackage{parskip}
-\RequirePackage{graphicx}
-\usepackage{xcolor}
-\usepackage[scale=0.94]{geometry}
-\usepackage{tabularx}
-\usepackage{array}
-\usepackage{enumitem}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{multicol}
-\usepackage{multirow}
-\usepackage[unicode]{hyperref}
-\usepackage{fontawesome5}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
 
-% ---------- Formatting ----------
-\newcolumntype{C}{>{\centering\arraybackslash}X}
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+%------------------------------------------------
+% PAGE SPACING (tight)
+%------------------------------------------------
 
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{
-  colorlinks=true,
-  breaklinks=true,
-  urlcolor=linkcolour,
-  linkcolor=linkcolour
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.85in}
+\addtolength{\textheight}{1.65in}
+
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=0.18in}
+
+%------------------------------------------------
+% SECTION STYLE
+%------------------------------------------------
+
+\titleformat{\section}
+{\large\bfseries}
+{}{0em}{}
+[\titlerule]
+
+\titlespacing*{\section}
+{0pt}{6pt}{3pt}
+
+%------------------------------------------------
+% SEPARATOR
+%------------------------------------------------
+
+\newcommand{\sep}{\hspace{0.35em}\textbar\hspace{0.35em}}
+
+%------------------------------------------------
+% CUSTOM COMMANDS
+%------------------------------------------------
+
+\newcommand{\resumeSubheading}[4]{
+\item
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{#1} & #2 \\
+#3 & #4 \\
+\end{tabular*}
+\vspace{-3pt}
 }
 
-\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{6pt}{6pt}
+\newcommand{\resumeProjectHeading}[2]{
+\item
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{#1} & #2 \\
+\end{tabular*}
+\vspace{-3pt}
+}
+
+\newcommand{\resumeItem}[1]{\item \small{#1}}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+%------------------------------------------------
+% DOCUMENT START
+%------------------------------------------------
 
 \begin{document}
-\pagestyle{empty}
 
-% ---------- Header ----------
-\begin{tabularx}{\linewidth}{@{}C@{}}
-{\Huge \textbf{Anvi Wadhwa}} \\[5pt]
-\href{https://github.com/anvisgit}{\raisebox{-0.05\height}\faGithub\ anvisgit} \ $|$ \
-\href{https://linkedin.com/in/anvi-wadhwa}{\raisebox{-0.05\height}\faLinkedin\ anvi-wadhwa} \ $|$ \
-\href{mailto:anvi.wadhwa2024@vitstudent.ac.in}{\raisebox{-0.05\height}\faEnvelope\ anvi.wadhwa2024@vitstudent.ac.in} \ $|$ \
-\raisebox{-0.05\height}\faMobile\ +91 9319086177
-\end{tabularx}
+%------------------------------------------------
+% HEADER
+%------------------------------------------------
 
-\vspace{6pt}
+\begin{center}
 
-% ---------- Summary ----------
-\section{Summary}
-Computer Science student passionate about Artificial Intelligence, Machine Learning, Space Tech and Quantitative Finance. Experience in building AI-driven applications that integrate NLP, deep learning, and financial modeling. Skilled in data pipelines, research-based automation, and visualization.
+{\fontsize{28}{32}\selectfont\bfseries Anvi Wadhwa}
 
-% ---------- Research Interests ----------
-\section{Research Interests}
-Machine learning applications in physical and space sciences, with a focus on characterizing interplanetary magnetic field fluctuations using cosmic ray secondaries (muons). Deep learning architectures including artificial neural networks (ANNs) and graph neural networks (GNNs) for modeling complex, high-dimensional physical systems. Bayesian inference for probabilistic modeling and uncertainty quantification. Reinforcement learning optimization algorithms such as Proximal Policy Optimization (PPO) and Group Relative Policy Optimization (GRPO), with interest in their mathematical foundations and large-scale training dynamics as explored in recent DeepSeek math and reasoning research.
+\vspace{3pt}
 
-% ---------- Education ----------
+\small
+\href{mailto:anvi.wadhwa2024@vitstudent.ac.in}{Email}
+\sep
++91 93190 86177
+\sep
+\href{https://github.com/anvisgit}{GitHub}
+\sep
+\href{https://linkedin.com/in/anvi-wadhwa}{LinkedIn}
+\sep
+\href{https://medium.com/@anviwadhwa7}{Medium}
+
+\end{center}
+
+%------------------------------------------------
+% EDUCATION
+%------------------------------------------------
+
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-2024 -- 2028 & \textbf{Bachelor of Technology in Computer Science}, VIT Chennai \hfill (CGPA: 8.1) \\
- & Clubs: Business Innovation Community (R\&D Lead), Microsoft Innovation Community (AI/ML Member), HackClub (Blockchain Member), Robotics Club (ML Member), Mathematics Club (Research Member) \\[6pt]
-2024 & Class 12 -- St. Francis School \hfill (86\%) \\[3pt]
-2022 & Class 10 -- St. Francis School \hfill (93\%) \\
-\end{tabularx}
 
-% ---------- Projects ----------
-\section{Projects}
-\begin{tabularx}{\linewidth}{@{}l r@{}}
-\textbf{Fraud Click Detection System} & \href{https://github.com/anvisgit}{Link} \\[2pt]
-\multicolumn{2}{L}{
-Developed an end-to-end fraud click detection system using \textbf{Random Forest, XGBoost, and Multi-Layer Perceptron (MLP)}. Implemented ensemble learning with hard and soft voting to improve robustness on imbalanced clickstream data. Built an interactive \textbf{Streamlit} dashboard for real-time hyperparameter tuning and model evaluation using ROC-AUC, Precision-Recall curves, confusion matrices, and feature importance analysis.
-} \\[4pt]
+\resumeSubHeadingListStart
 
-\textbf{Resume Insight Analyzer} & \href{https://github.com/anvisgit}{Link} \\[2pt]
-\multicolumn{2}{L}{
-Built an AI-powered Streamlit app using \textbf{Sentence Transformers} and \textbf{SpaCy} to analyze resumes, identify skill gaps, and evaluate tone using semantic similarity and sentiment scoring.
-} \\[4pt]
+\resumeSubheading
+{Vellore Institute of Technology (VIT Chennai)}
+{Chennai, India}
+{B.Tech in Computer Science}
+{Aug 2024 -- May 2028}
 
-\textbf{Financial Analysis and Stock Prediction App} & \href{https://github.com/anvisgit}{Link} \\[2pt]
-\multicolumn{2}{L}{
-Developed a predictive stock analytics system with \textbf{Yahoo Finance, Finnhub API, Prophet, and XGBoost} for real-time visualization and sentiment-based market insights.
-} \\[4pt]
+\resumeItemListStart
+\resumeItem{CGPA: 8.1/10}
+\resumeItem{R\&D Lead, Business Innovation Community}
+\resumeItem{Member, Microsoft Innovation Community (AI/ML)}
+\resumeItem{Member, Hackclub (AI/ML and Blockchain)}
+\resumeItemListEnd
 
-\textbf{Real-Time Emotion Detection} & \href{https://github.com/anvisgit}{Link} \\[2pt]
-\multicolumn{2}{L}{
-Implemented a webcam-based facial emotion recognition system using \textbf{OpenCV} and \textbf{FER} for real-time classification of human emotions.
-} \\[4pt]
+\resumeSubHeadingListEnd
 
-\textbf{Monte Carlo Stock Price Simulation} & \href{https://github.com/anvisgit}{Link} \\[2pt]
-\multicolumn{2}{L}{
-Simulated probabilistic stock price movements using \textbf{Monte Carlo methods} with \textbf{Streamlit, NumPy,} and \textbf{yFinance} for interactive financial forecasting.
-} \\
-\end{tabularx}
+%------------------------------------------------
+% RESEARCH INTERESTS
+%------------------------------------------------
 
-% ---------- Certifications ----------
+\section{Research Interests}
+
+Computer Science undergraduate interested in reinforcement learning, probabilistic modeling, and quantitative finance. Current work focuses on policy-gradient methods, uncertainty quantification, sequential decision-making, algorithmic trading systems, and multimodal speech emotion recognition.
+
+%------------------------------------------------
+% EXPERIENCE
+%------------------------------------------------
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Computer Vision Research Intern}
+{IIT (BHU) Varanasi}
+{AI-Powered Rehabilitation and Mobility System}
+{May 2025 -- Present}
+
+\resumeItemListStart
+\resumeItem{Built real-time physiotherapy system using MediaPipe, OpenCV, and Python.}
+\resumeItem{Developed joint-angle tracking pipelines for hip, knee, and ankle motion analysis.}
+\resumeItem{Engineered CSV-based motion logging system for longitudinal rehabilitation data.}
+\resumeItem{Optimized system for CPU-only deployment on standard consumer hardware.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%------------------------------------------------
+% RESEARCH PROJECTS
+%------------------------------------------------
+
+\section{Research Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{PPO vs GRPO for Solving Wordle}
+{\hfill \href{https://github.com/anvisgit/Comparative-Analysis-Of-PPO-And-GRPO-for-Solving-Wordle}{GitHub}}
+
+\resumeItemListStart
+\resumeItem{Designed and trained PPO and GRPO reinforcement learning agents in a custom Wordle environment.}
+\resumeItem{Compared training stability, sample efficiency, convergence behavior, and reward-shaping sensitivity under identical experimental conditions.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Algorithmic Trading with Reinforcement Learning}
+{\hfill \href{https://github.com/anvisgit/Algorithmic-Trading-with-Reinforcement-Learning}{GitHub}}
+
+\resumeItemListStart
+\resumeItem{Built PPO-based trading agent for Indian equities using custom Gym environment.}
+\resumeItem{Incorporated realistic transaction costs and position sizing constraints.}
+\resumeItem{Outperformed Nifty 50 benchmark using Sharpe, Calmar, and drawdown metrics.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Speech Emotion Recognition via Multi-Branch 1D-CNN Fusion}
+{\hfill \href{https://github.com/anvisgit/Feature-Adaptation-and-Model-Optimization-for-Emotion-Recognition-in-Speech}{GitHub}}
+
+\resumeItemListStart
+\resumeItem{Developed multi-branch 1D-CNN combining MFCC, Mel spectrogram, and Chroma features.}
+\resumeItem{Achieved 75.7\% accuracy and 75.5\% macro F1-score on RAVDESS dataset.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Systematic Intraday Trading using GARCH Forecasts}
+{\hfill \href{https://github.com/anvisgit/Systematic-Intraday-Trading-Using-GARCH-Forecasts-and-High-Frequency-Indicators}{GitHub}}
+
+\resumeItemListStart
+\resumeItem{Developed a volatility-driven intraday trading strategy using rolling GARCH forecasts and high-frequency market indicators to generate entry and exit signals.}
+\resumeItem{Implemented statistical volatility modeling to dynamically adapt position sizing and trade timing based on forecasted risk regimes.}
+\resumeItem{Backtested the strategy across multiple equity instruments using historical intraday data to evaluate robustness and generalization.}
+\resumeItem{Evaluated performance using risk-adjusted metrics including Sharpe ratio, win rate, drawdown, and volatility-adjusted returns.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%------------------------------------------------
+% TECHNICAL SKILLS
+%------------------------------------------------
+
+\section{Technical Skills}
+
+\textbf{Languages:} Python, Java
+
+\textbf{Machine Learning:} Deep Learning, Reinforcement Learning, Computer Vision, NLP
+
+\textbf{Tools:} PyTorch, TensorFlow, scikit-learn, OpenCV, NumPy, Pandas, Git
+
+%------------------------------------------------
+% CERTIFICATIONS
+%------------------------------------------------
+
 \section{Certifications}
-\begin{itemize}[noitemsep,leftmargin=1em]
-\item Data Science with Python (Iamneo)
-\item Quantitative Finance (IIT Kharagpur)
-\item Python and Automation (IIT Bombay)
-\item Machine Learning Specialization (Coursera -- Andrew Ng)
-\item Scientific Computing (FreeCodeCamp)
-\item Data Analysis with Python (FreeCodeCamp)
-\end{itemize}
 
-% ---------- Skills ----------
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-\textbf{Programming Languages} & Python, Java \\
-\textbf{Machine Learning \& AI} & Deep Learning, NLP, Computer Vision, Generative AI, Time-Series Forecasting \\
-\textbf{Frameworks \& Libraries} & PyTorch, scikit-learn, LangChain, OpenCV, NumPy, Pandas, Matplotlib, Streamlit \\
-\textbf{Tools \& Platforms} & Git, VS Code, Jupyter Notebook, Google Colab, Finnhub API, Yahoo Finance \\
-\textbf{Core Competencies} & Model Training \& Optimization, Statistical Modeling, Feature Engineering, Sentiment Analysis, Data Visualization \\
-\textbf{Additional} & Research Writing, Technical Blogging (Medium), Blogs, Article Writing  \\
-\end{tabularx}
-
-\vspace{6pt}
-\center{\footnotesize Last updated: \today}
+\textbf{Machine Learning Specialization} — Coursera (Andrew Ng)
+\sep
+\textbf{Quantitative Finance} — IIT Kharagpur
 
 \end{document}
