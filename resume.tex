@@ -1,232 +1,191 @@
-\documentclass[letterpaper,11pt]{article}
+%-------------------------
+% Anvi Wadhwa — Resume
+%-------------------------
 
-%------------------------------------------------
-% Packages
-%------------------------------------------------
+\documentclass[10pt,letterpaper]{article}
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage[dvipsnames]{xcolor}
-\usepackage[hidelinks]{hyperref}
+\usepackage[
+  top=0.35in,
+  bottom=0.35in,
+  left=0.45in,
+  right=0.45in
+]{geometry}
+
 \usepackage{enumitem}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage[dvipsnames,usenames]{xcolor}
+\usepackage[T1]{fontenc}
 \usepackage{tabularx}
-\input{glyphtounicode}
+\usepackage{array}
 
-%------------------------------------------------
-% PAGE SPACING (tight)
-%------------------------------------------------
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue!60!black,
+  linkcolor=blue!60!black
+}
 
-\addtolength{\oddsidemargin}{-0.6in}
-\addtolength{\evensidemargin}{-0.6in}
-\addtolength{\textwidth}{1.2in}
-\addtolength{\topmargin}{-0.85in}
-\addtolength{\textheight}{1.65in}
-
-\setlength{\parskip}{0pt}
+\pagestyle{empty}
 \setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
 
-\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=0.18in}
-
-%------------------------------------------------
-% SECTION STYLE
-%------------------------------------------------
+% Section styling
+\definecolor{accent}{RGB}{26,60,107}
 
 \titleformat{\section}
-{\large\bfseries}
-{}{0em}{}
-[\titlerule]
+  {\vspace{2pt}\bfseries\small\color{accent}\uppercase}
+  {}{0em}{}
+  [\vspace{-2pt}\color{accent}\rule{\linewidth}{0.6pt}\vspace{2pt}]
 
-\titlespacing*{\section}
-{0pt}{6pt}{3pt}
+\titlespacing{\section}{0pt}{4pt}{3pt}
 
-%------------------------------------------------
-% SEPARATOR
-%------------------------------------------------
-
-\newcommand{\sep}{\hspace{0.35em}\textbar\hspace{0.35em}}
-
-%------------------------------------------------
-% CUSTOM COMMANDS
-%------------------------------------------------
-
-\newcommand{\resumeSubheading}[4]{
-\item
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-\textbf{#1} & #2 \\
-#3 & #4 \\
-\end{tabular*}
-\vspace{-3pt}
+% Bullet styling
+\setlist[itemize]{
+  leftmargin=1.2em,
+  itemsep=0.8pt,
+  parsep=0pt,
+  topsep=1pt,
+  label=\textbullet
 }
 
-\newcommand{\resumeProjectHeading}[2]{
-\item
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-\textbf{#1} & #2 \\
-\end{tabular*}
-\vspace{-3pt}
+% Role header (NO ITALICS)
+\newcommand{\roleheader}[3]{%
+  \textbf{#1} \hfill {\small\color{gray}#2}\\
+  {\small\color{gray}#3}
 }
 
-\newcommand{\resumeItem}[1]{\item \small{#1}}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in,label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
-
-%------------------------------------------------
-% DOCUMENT START
-%------------------------------------------------
+% Project header (NO ITALICS)
+\newcommand{\projheader}[3]{%
+  \textbf{#1} \hfill {\small\color{gray}#2}%
+  \ifx&#3&\else\\{\small\color{gray}#3}\fi
+}
 
 \begin{document}
 
-%------------------------------------------------
-% HEADER
-%------------------------------------------------
+%──────────────────────────── HEADER ────────────────────────────
 
 \begin{center}
+{\LARGE\bfseries Anvi Wadhwa}\\[3pt]
 
-{\fontsize{28}{32}\selectfont\bfseries Anvi Wadhwa}
-
-\vspace{3pt}
-
-\small
-\href{mailto:anvi.wadhwa2024@vitstudent.ac.in}{Email}
-\sep
-+91 93190 86177
-\sep
-\href{https://github.com/anvisgit}{GitHub}
-\sep
-\href{https://linkedin.com/in/anvi-wadhwa}{LinkedIn}
-\sep
-\href{https://medium.com/@anviwadhwa7}{Medium}
-
+{\small
++91\,93190\,86177 \;$\cdot$\;
+\href{mailto:email@example.com}{anvi.wadhwa2024@vitstudent.ac.in}
+\;$\cdot$\;
+\href{https://github.com/anvisgit?tab=repositories}{github}
+\;$\cdot$\;
+\href{https://linkedin.com/in/anviwadhwa7}{linkedin}
+\;$\cdot$\;
+\href{https://medium.com/@anviwadhwa7}{medium.com/@anviwadhwa7}
+\;$\cdot$\;
+\href{https://anvisgit.github.io/anvisgit/}{Portfolio Website}
+}
 \end{center}
 
-%------------------------------------------------
-% EDUCATION
-%------------------------------------------------
+\vspace{-4pt}
 
-\section{Education}
-
-\resumeSubHeadingListStart
-
-\resumeSubheading
-{Vellore Institute of Technology (VIT Chennai)}
-{Chennai, India}
-{B.Tech in Computer Science}
-{Aug 2024 -- May 2028}
-
-\resumeItemListStart
-\resumeItem{CGPA: 8.1/10}
-\resumeItem{R\&D Lead, Business Innovation Community}
-\resumeItem{Member, Microsoft Innovation Community (AI/ML)}
-\resumeItem{Member, Hackclub (AI/ML and Blockchain)}
-\resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-%------------------------------------------------
-% RESEARCH INTERESTS
-%------------------------------------------------
+%────────────────────── RESEARCH INTERESTS ─────────────────────
 
 \section{Research Interests}
 
-Computer Science undergraduate interested in reinforcement learning, probabilistic modeling, and quantitative finance. Current work focuses on policy-gradient methods, uncertainty quantification, sequential decision-making, algorithmic trading systems, and multimodal speech emotion recognition.
+{\small
+I like to apply machine learning to physical systems, focusing on modeling interplanetary magnetic field fluctuations from muon-based cosmic-ray data. I have worked with neural networks and graph neural networks for high-dimensional structure learning, Bayesian methods for probabilistic inference, and reinforcement learning, with emphasis on optimization dynamics, convergence behavior, and uncertainty quantification.
+}
 
-%------------------------------------------------
-% EXPERIENCE
-%------------------------------------------------
+%──────────────────────── EDUCATION ────────────────────────────
+
+\section{Education}
+
+\roleheader
+{Vellore Institute of Technology (VIT Chennai)}
+{Aug 2024 -- May 2028}
+{B.Tech, Computer Science \quad$\cdot$\quad CGPA: 8.1/10 \quad$\cdot$\quad Chennai, India}
+
+\vspace{1pt}
+
+\begin{itemize}
+\item R\&D Lead, Business Innovation Community; directed applied AI/ML projects for a 12-member research team
+\item Active member of Microsoft Innovation Community and Hackclub, contributing to AI/ML and blockchain initiatives
+\end{itemize}
+
+%──────────────────────── EXPERIENCE ───────────────────────────
 
 \section{Experience}
 
-\resumeSubHeadingListStart
-
-\resumeSubheading
-{Computer Vision Research Intern}
-{IIT (BHU) Varanasi}
-{AI-Powered Rehabilitation and Mobility System}
+\roleheader
+{Computer Vision Research Intern --- IIT (BHU) Varanasi}
 {May 2025 -- Present}
+{AI-Powered Rehabilitation \& Mobility System}
 
-\resumeItemListStart
-\resumeItem{Built real-time physiotherapy system using MediaPipe, OpenCV, and Python.}
-\resumeItem{Developed joint-angle tracking pipelines for hip, knee, and ankle motion analysis.}
-\resumeItem{Engineered CSV-based motion logging system for longitudinal rehabilitation data.}
-\resumeItem{Optimized system for CPU-only deployment on standard consumer hardware.}
-\resumeItemListEnd
+\vspace{1pt}
 
-\resumeSubHeadingListEnd
+\begin{itemize}
+\item Developed a real-time physiotherapy assessment system using MediaPipe and OpenCV, tracking lower-limb joint kinematics at \textbf{28 FPS} on CPU-only hardware
+\item Engineered a joint-angle estimation pipeline achieving \textbf{$\pm$2° accuracy} across 6 DOF, reducing reliance on manual goniometric measurements
 
-%------------------------------------------------
-% RESEARCH PROJECTS
-%------------------------------------------------
+\end{itemize}
 
-\section{Research Projects}
-\resumeSubHeadingListStart
-\resumeProjectHeading
-{PPO vs GRPO for Solving Wordle}
-{\hfill \href{https://github.com/anvisgit/Comparative-Analysis-Of-PPO-And-GRPO-for-Solving-Wordle}{GitHub}}
+%────────────────────── -------------- PROJECTS ──────────────────────
 
-\resumeItemListStart
-\resumeItem{Designed and trained PPO and GRPO reinforcement learning agents in a custom Wordle environment.}
-\resumeItem{Compared training stability, sample efficiency, convergence behavior, and reward-shaping sensitivity under identical experimental conditions.}
-\resumeItemListEnd
+\section{Projects}
 
-\resumeProjectHeading
-{Algorithmic Trading with Reinforcement Learning}
-{\hfill \href{https://github.com/anvisgit/Algorithmic-Trading-with-Reinforcement-Learning}{GitHub}}
+\projheader
+{Comparative Analysis of PPO and GRPO for Solving Wordle| Building }
+{}
 
-\resumeItemListStart
-\resumeItem{Built PPO-based trading agent for Indian equities using custom Gym environment.}
-\resumeItem{Incorporated realistic transaction costs and position sizing constraints.}
-\resumeItem{Outperformed Nifty 50 benchmark using Sharpe, Calmar, and drawdown metrics.}
-\resumeItemListEnd
+\begin{itemize}
+\item Implemented PPO and GRPO from scratch in a custom Gymnasium Wordle environment and benchmarked training dynamics under identical hyperparameter settings
+\end{itemize}
 
-\resumeProjectHeading
-{Speech Emotion Recognition via Multi-Branch 1D-CNN Fusion}
-{\hfill \href{https://github.com/anvisgit/Feature-Adaptation-and-Model-Optimization-for-Emotion-Recognition-in-Speech}{GitHub}}
+\vspace{2pt}
 
-\resumeItemListStart
-\resumeItem{Developed multi-branch 1D-CNN combining MFCC, Mel spectrogram, and Chroma features.}
-\resumeItem{Achieved 75.7\% accuracy and 75.5\% macro F1-score on RAVDESS dataset.}
-\resumeItemListEnd
+\projheader
+{Systematic Intraday Trading via GARCH Volatility Forecasting}
+{}
 
-\resumeProjectHeading
-{Systematic Intraday Trading using GARCH Forecasts}
-{\hfill \href{https://github.com/anvisgit/Systematic-Intraday-Trading-Using-GARCH-Forecasts-and-High-Frequency-Indicators}{GitHub}}
+\begin{itemize}
+\item Developed a systematic intraday trading framework combining rolling GARCH(1,3) volatility forecasts with RSI-Bollinger mean-reversion signals on high-frequency equity data
+\item Evaluated strategy robustness using walk-forward validation and out-of-sample testing, achieving \textbf{+5.0\% test return}, \textbf{0.65 Sharpe ratio}, and \textbf{-6.6\% maximum drawdown}
+\end{itemize}
 
-\resumeItemListStart
-\resumeItem{Developed a volatility-driven intraday trading strategy using rolling GARCH forecasts and high-frequency market indicators to generate entry and exit signals.}
-\resumeItem{Implemented statistical volatility modeling to dynamically adapt position sizing and trade timing based on forecasted risk regimes.}
-\resumeItem{Backtested the strategy across multiple equity instruments using historical intraday data to evaluate robustness and generalization.}
-\resumeItem{Evaluated performance using risk-adjusted metrics including Sharpe ratio, win rate, drawdown, and volatility-adjusted returns.}
-\resumeItemListEnd
+\vspace{2pt}
 
-\resumeSubHeadingListEnd
+\projheader
+{Speech Emotion Recognition-- MultiBranch 1D CNN}
+{}
 
-%------------------------------------------------
-% TECHNICAL SKILLS
-%------------------------------------------------
+\begin{itemize}
+\item Designed a multi-branch 1D-CNN architecture combining MFCC, Mel spectrogram, and Chroma representations through late-fusion aggregation
+\item Achieved \textbf{75.7\% accuracy} and \textbf{75.5\% macro F1} on the RAVDESS emotion-recognition benchmark
+\item Improved performance by \textbf{7.5 percentage points} over an MFCC-only baseline, demonstrating the value of spectral feature diversity
+\end{itemize}
+
+%────────────────────── TECHNICAL SKILLS ───────────────────────
 
 \section{Technical Skills}
 
-\textbf{Languages:} Python, Java
+\begin{tabular}{@{}ll}
+\small\textbf{Programming} &
+\small Python, Java \\[2pt]
 
-\textbf{Machine Learning:} Deep Learning, Reinforcement Learning, Computer Vision, NLP
+\small\textbf{Machine Learning} &
+\small Numpy, Pandas, PyTorch, TensorFlow, Scikit-learn, ARCH/GARCH Models\\[2pt]
 
-\textbf{Tools:} PyTorch, TensorFlow, scikit-learn, OpenCV, NumPy, Pandas, Git
+\small\textbf{Reinforcement Learning} &
+\small PPO, GRPO, Stable-Baselines3, Gymnasium, Policy Gradient Methods \\[2pt]
 
-%------------------------------------------------
-% CERTIFICATIONS
-%------------------------------------------------
+\small\textbf{Computer Vision \& DSP} &
+\small OpenCV, MediaPipe, MoveNet(TF) \\[2pt]
+
+\small\textbf{Tools} &
+\small Git, Linux
+\end{tabular}
+
+%────────────────────── CERTIFICATIONS ─────────────────────────
 
 \section{Certifications}
 
-\textbf{Machine Learning Specialization} — Coursera (Andrew Ng)
-\sep
-\textbf{Quantitative Finance} — IIT Kharagpur
+Machine Learning Specialization --- Coursera / Andrew Ng |  Quantitative Finance --- IIT Kharagpur
+
 
 \end{document}
+
